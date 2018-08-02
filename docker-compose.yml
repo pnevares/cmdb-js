@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  cmdb-js-server:
+    image: godaddy/node:10.5.0-debian-3.1.1
+
+  cmdb-js-client:
+    depends_on:
+      - cmdb-js-server
+    image: godaddy/node:10.5.0-debian-3.1.1
