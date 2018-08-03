@@ -1,10 +1,14 @@
-version: '3.3'
+version: '3'
 
 services:
   cmdb-js-server:
-    image: godaddy/node:10.5.0-debian-3.1.1
+    build: ./server
+    ports:
+      - "8082:8080"
 
   cmdb-js-client:
     depends_on:
       - cmdb-js-server
-    image: godaddy/node:10.5.0-debian-3.1.1
+    build: ./client
+    ports:
+      - "8081:8080"
