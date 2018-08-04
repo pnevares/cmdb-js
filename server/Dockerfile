@@ -1,14 +1,12 @@
-FROM godaddy/node:10.5.0-debian-3.1.1
+FROM node:10
 
-RUN mkdir /app
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package.json package-lock.json /app/
+COPY package*.json ./
 
 RUN npm install
 
-COPY docker/docker-entrypoint.sh /docker-entrypoint.sh
-COPY . /app/
+COPY . .
 
 EXPOSE 8080
-CMD ["gosu", "node", "npm", "start"]
+CMD [ "npm", "start" ]
