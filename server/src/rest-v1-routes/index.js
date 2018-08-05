@@ -1,12 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+
+const contactsRoutes = require('./contacts');
 
 // documentation
 router.get('/', (req, res) => res.send('<html><body>REST v1 route documentation</body></html>'));
 
-// all contacts
-router.get('/contacts', (req, res) => res.json(
-  ['all contacts']
-));
+contactsRoutes.forEach((route) => {
+  const { verb, path, handler } = route;
+  router[verb](path, handler);
+});
 
 module.exports = router;
