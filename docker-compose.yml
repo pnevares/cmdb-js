@@ -1,7 +1,15 @@
 version: '3'
 
 services:
+  cmdb-js-mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: cmdb_user
+      MONGO_INITDB_ROOT_PASSWORD: cmdb_password
+
   cmdb-js-server:
+    depends_on:
+      - cmdb-js-mongo
     build: ./server
     ports:
       - "8082:8080"
