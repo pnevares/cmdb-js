@@ -1,3 +1,5 @@
+const dbRead = require('./db-read');
+
 module.exports = [
   {
     'verb': 'get',
@@ -12,5 +14,10 @@ module.exports = [
     'handler': (req, res) => res.json(
       'single contact'
     ),
+  },
+  {
+    'verb': 'get',
+    'path': '/read',
+    'handler': dbRead,
   }
 ];
