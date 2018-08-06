@@ -12,15 +12,24 @@ services:
       - cmdb-js-mongo
     build: ./server
     ports:
-      - "8082:8080"
+      - 8082:8080
     volumes:
       - ./server:/usr/src/app:ro
 
   cmdb-js-client:
-    depends_on:
-      - cmdb-js-server
     build: ./client
     ports:
-      - "8081:8080"
+      - 8081:8080
     volumes:
       - ./client:/usr/src/app:ro
+
+  mongo-admin:
+    image: mongo-express
+    depends_on:
+      - cmdb-js-mongo
+    ports:
+      - 8083:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: cmdb-js-mongo
+      ME_CONFIG_MONGODB_ADMINUSERNAME: cmdb_user
+      ME_CONFIG_MONGODB_ADMINPASSWORD: cmdb_password
