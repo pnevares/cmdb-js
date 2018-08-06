@@ -1,10 +1,7 @@
-const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://cmdb_user:cmdb_password@cmdb-js-mongo:27017';
-
-const dbName = 'cmdb';
+const mongoDb = require('./mongodb');
 
 module.exports = (req, res) => {
-  let response = '';
+  const dbClient = mongoDb.client();
 
   const insertDocuments = function(db, callback) {
     const collection = db.collection('contacts');
@@ -12,19 +9,11 @@ module.exports = (req, res) => {
     collection.insertMany([
       {a : 1}, {a : 2}, {a : 3}
     ], function(err, result) {
-      response += 'Inserted 3 documents into the collection';
-      callback(result);
+      callback('Inserted 3 documents into the collection');
     });
   }
 
-  MongoClient.connect(url, function(err, client) {
-    response += 'Connected successfully to server';
-  
-    const db = client.db(dbName);
-  
-    insertDocuments(db, function() {
-      res.send(response);
-      client.close();
-    });
+  insertDocuments(dbClient, function(result) {
+    res.send(result);
   });
 };

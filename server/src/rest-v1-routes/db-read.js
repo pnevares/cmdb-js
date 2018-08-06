@@ -1,16 +1,11 @@
-const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://cmdb_user:cmdb_password@cmdb-js-mongo:27017';
-
-const dbName = 'cmdb';
+const mongoDb = require('../mongodb');
 
 module.exports = (req, res) => {
-  MongoClient.connect(url, function(err, client) {
-    const db = client.db(dbName);
-    const collection = db.collection('contacts');
+  const dbClient = mongoDb.client();
 
-    collection.find({}).toArray((err, docs) => {
-      res.send(docs);
-      client.close();
-    });
+  const collection = dbClient.collection('contacts');
+
+  collection.find({}).toArray((err, docs) => {
+    res.send(docs);
   });
 };
