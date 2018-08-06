@@ -13,10 +13,10 @@ module.exports = () => {
 
   while(addressCount > 0) {
     const streetAddress = [
-      Math.ceil(Math.random() * 9999), // houseNumber
-      random(directions), // streetDirection
-      random(streetNames), // streetName
-      random(streetSuffixes), // streetSuffix
+      Math.ceil(Math.random() * 9999), // house number
+      random(directions),
+      random(streetNames),
+      random(streetSuffixes),
     ];
 
     addresses.push({
