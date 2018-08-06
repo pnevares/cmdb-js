@@ -17,12 +17,12 @@ module.exports = () => {
       random(directions),
       random(streetNames),
       random(streetSuffixes),
-    ];
+    ].join(' ');
 
     addresses.push({
       primary: addressCount === 1,
       label: random(labels),
-      streetAddress: streetAddress.join(' '),
+      streetAddress,
       city: random(cities),
       state: random(states),
       zip: Math.ceil(Math.random() * 89999) + 10000,
