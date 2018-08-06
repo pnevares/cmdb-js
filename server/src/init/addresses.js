@@ -25,7 +25,7 @@ module.exports = () => {
       streetAddress,
       city: random(cities),
       state: random(states),
-      zip: Math.ceil(Math.random() * 89999) + 10000,
+      zip: Math.ceil(Math.random() * 89999) + 10000 + '',
     });
     addressCount--;
   }
