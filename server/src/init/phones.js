@@ -1,6 +1,6 @@
 const random = require('./random');
 
-const labels = ['Home', 'Office', 'Cell'];
+const labels = ['Cell', 'Home', 'Office'];
 
 module.exports = () => {
   let phoneCount = Math.ceil(Math.random() * 3);

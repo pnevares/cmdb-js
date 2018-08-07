@@ -1,8 +1,8 @@
+const addresses = require('./addresses');
+const emails = require('./emails');
 const mongoDb = require('../mongodb');
 const names = require('./names');
-const addresses = require('./addresses');
 const phones = require('./phones');
-const emails = require('./emails');
 
 module.exports = (req, res) => {
   const dbClient = mongoDb.client();
@@ -17,6 +17,8 @@ module.exports = (req, res) => {
       addresses: addresses(),
       phones: phones(),
       emails: emails(name),
+      deleted: false,
+      created: Date.now(),
     };
 
     contacts.push(contact);

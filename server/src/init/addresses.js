@@ -1,9 +1,9 @@
 const random = require('./random');
 
 const directions = ['N', 'S', 'E', 'W'];
-const streetNames = ['Third', 'First', 'Fourth', 'Park', 'Fifth', 'Main', 'Sixth', 'Oak', 'Seventh', 'Pine'];
+const streetNames = ['Fifth', 'First', 'Fourth', 'Main', 'Oak', 'Park', 'Pine', 'Seventh', 'Sixth', 'Third'];
 const streetSuffixes = ['Ave', 'Blvd', 'Ct', 'Ln', 'Pkwy', 'Pl', 'Rd', 'St', 'Ter', 'Way'];
-const cities = ['Fairview', 'Midway', 'Oak Grove', 'Franklin', 'Riverside', 'Centerville', 'Mount Pleasant', 'Georgetown', 'Salem', 'Greenwood'];
+const cities = ['Centerville', 'Fairview', 'Franklin', 'Georgetown', 'Greenwood', 'Midway', 'Mount Pleasant', 'Oak Grove', 'Riverside', 'Salem'];
 const states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
 const labels = ['Home', 'Office', 'Other'];
 
