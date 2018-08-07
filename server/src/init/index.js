@@ -1,5 +1,6 @@
 const addresses = require('./addresses');
 const emails = require('./emails');
+const jobTitles = require('./job-titles');
 const mongoDb = require('../mongodb');
 const names = require('./names');
 const phones = require('./phones');
@@ -14,6 +15,7 @@ module.exports = (req, res) => {
 
     const contact = {
       ...name,
+      jobTitle: jobTitles(),
       addresses: addresses(),
       phones: phones(),
       emails: emails(name),
