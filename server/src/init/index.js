@@ -2,6 +2,7 @@ const mongoDb = require('../mongodb');
 const names = require('./names');
 const addresses = require('./addresses');
 const phones = require('./phones');
+const emails = require('./emails');
 
 module.exports = (req, res) => {
   const dbClient = mongoDb.client();
@@ -13,6 +14,7 @@ module.exports = (req, res) => {
       ...names(),
       addresses: addresses(),
       phones: phones(),
+      emails: emails(),
     };
 
     contacts.push(contact);
