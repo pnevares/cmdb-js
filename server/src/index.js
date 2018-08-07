@@ -15,7 +15,7 @@ app.get('/api', (req, res) => {
   res.json({ message: 'server is alive' });
 });
 
-app.get('/init', initHandler);
+app.get('/init/:count', initHandler);
 
 app.use('/rest/v1', restV1Routes);
 app.use('/graphql/v1', graphqlV1Routes);

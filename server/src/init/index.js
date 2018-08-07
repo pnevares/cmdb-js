@@ -11,7 +11,7 @@ module.exports = (req, res) => {
   const collection = dbClient.collection('contacts');
 
   const contacts = [];
-  while(contacts.length < 10) {
+  while(contacts.length < req.params.count) {
     const name = names();
 
     const contact = {
