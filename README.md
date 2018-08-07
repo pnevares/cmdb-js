@@ -11,6 +11,7 @@ From the project root, run `docker-compose up -d`.
 After containers are running, navigate to:
 - http://localhost:8081 (client)
 - http://localhost:8082 (server)
+- http://localhost:8083 (mongodb admin)
 
 If you'd like to start the containers over from scratch, you can use `make reload` to stop -> destroy -> build -> up.
 
