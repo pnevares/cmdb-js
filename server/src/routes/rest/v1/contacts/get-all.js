@@ -1,4 +1,4 @@
-const mongoDb = require('../../mongodb');
+const mongoDb = require('../../../../mongodb');
 
 module.exports = (req, res) => {
   const dbClient = mongoDb.client();

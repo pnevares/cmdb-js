@@ -1,4 +1,4 @@
-const mongoDb = require('../../mongodb');
+const mongoDb = require('../../../../mongodb');
 const ObjectId = require('mongodb').ObjectId;
 
 module.exports = (req, res) => {

@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 8080;
-const restV1Routes = require('./rest-v1-routes');
-const graphqlV1Routes = require('./graphql-v1-routes');
-const initHandler = require('./init');
+const restV1Routes = require('./routes/rest/v1');
+const graphqlV1Routes = require('./routes/graphql/v1');
+const initHandler = require('./routes/init');
 const mongoDb = require('./mongodb');
 
 mongoDb.connect();

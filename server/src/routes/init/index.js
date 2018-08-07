@@ -2,7 +2,7 @@ const addresses = require('./addresses');
 const dates = require('./dates');
 const emails = require('./emails');
 const jobTitles = require('./job-titles');
-const mongoDb = require('../mongodb');
+const mongoDb = require('../../mongodb');
 const names = require('./names');
 const phones = require('./phones');
 
