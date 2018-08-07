@@ -10,11 +10,13 @@ module.exports = (req, res) => {
 
   const contacts = [];
   while(contacts.length < 10) {
+    const name = names();
+
     const contact = {
-      ...names(),
+      ...name,
       addresses: addresses(),
       phones: phones(),
-      emails: emails(),
+      emails: emails(name),
     };
 
     contacts.push(contact);
