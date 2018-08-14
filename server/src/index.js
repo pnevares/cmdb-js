@@ -20,4 +20,4 @@ app.get('/init/:count', initHandler);
 app.use('/rest/v1', restV1Routes);
 app.use('/graphql/v1', graphqlV1Routes);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`cmdb-js server listening on port ${port}!`));

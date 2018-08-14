@@ -12,4 +12,4 @@ app.get('/', (req, res) => res.send(`
 
 app.get('/app.js', (req, res) => res.sendFile(path.join(__dirname, 'app.js')));
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`cmdb-js client listening on port ${port}!`));
