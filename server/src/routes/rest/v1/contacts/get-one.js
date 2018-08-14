@@ -3,10 +3,11 @@ const ObjectId = require('mongodb').ObjectId;
 
 module.exports = (req, res) => {
   const dbClient = mongoDb.client();
-
   const collection = dbClient.collection('contacts');
 
-  collection.find(ObjectId(req.params.id)).toArray((err, docs) => {
-    res.json(docs);
-  });
+  // use the promise API for this
+  collection
+    .find(ObjectId(req.params.id))
+    .toArray()
+    .then(docs => res.json(docs));
 };

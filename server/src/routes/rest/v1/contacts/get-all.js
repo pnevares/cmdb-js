@@ -2,10 +2,11 @@ const mongoDb = require('../../../../mongodb');
 
 module.exports = (req, res) => {
   const dbClient = mongoDb.client();
-
   const collection = dbClient.collection('contacts');
 
-  collection.find().toArray((err, docs) => {
-    res.json(docs);
-  });
+  // use the promise API for this
+  collection
+    .find()
+    .toArray()
+    .then(docs => res.json(docs));
 };
