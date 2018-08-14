@@ -8,7 +8,6 @@ const names = require('./names');
 const phones = require('./phones');
 
 module.exports = (req, res) => {
-  const output = [];
   const dbClient = mongoDb.client();
 
   const contactsCollection = dbClient.collection('contacts');
@@ -29,12 +28,9 @@ module.exports = (req, res) => {
     contacts.push(contact);
   }
   
-
   const companiesCollection = dbClient.collection('companies');
   const companies = [];
   while(companies.length < req.params.count) {
-    const name = names();
-
     const company = {
       name: companyNames(),
       created: Date.now(),
@@ -42,9 +38,9 @@ module.exports = (req, res) => {
 
     companies.push(company);
   }
-  
 
-  contactsCollection.insertMany(contacts)
+  contactsCollection
+    .insertMany(contacts)
     .then(() => companiesCollection.insertMany(companies))
     .then(() => res.send('Inserted contacts and companies'));
 };
