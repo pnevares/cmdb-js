@@ -21,7 +21,7 @@ If you make changes to either Dockerfile, the next `docker-compose up` will use 
 
 ```
 # delete all images built with docker-compose
-docker-compose rm --all
+docker-compose rm -s
 
 # build new images, ignoring cache
 docker-compose build --no-cache
