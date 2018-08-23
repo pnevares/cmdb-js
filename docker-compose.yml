@@ -21,7 +21,7 @@ services:
     ports:
       - 8081:8080
     volumes:
-      - ./client:/usr/src/app:ro
+      - ./client:/usr/src/app
 
   mongo-admin:
     image: mongo-express
