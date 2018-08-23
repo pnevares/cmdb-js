@@ -13,6 +13,10 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/pnevares/cmdb-js"
+  },
   "dependencies": {
     "isomorphic-unfetch": "^2.1.1",
     "next": "^6.1.1",
