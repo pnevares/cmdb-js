@@ -7,6 +7,10 @@ let _client;
 module.exports = {
   connect: () => {
     MongoClient.connect(url, function(err, client) {
+      if(err) {
+        console.log(err);
+        return;
+      }
       _client = client.db(dbName);
     });
   },
